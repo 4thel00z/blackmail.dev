@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackmail.dev</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to blackmail.dev</h1>
+        <p>Your source for technical insights and software development stories.</p>
+    </header>
+
+    <div class="content" id="postsList">
+        <!-- Posts will be loaded here -->
+    </div>
+
+    <script>
+        fetch('posts.json')
+        .then(response => response.json())
+        .then(posts => {
+            const postsList = document.getElementById('postsList');
+            posts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.innerHTML = `<h2>${post.title}</h2><p>${post.date}</p><a href="${post.path}/index.html">Read more</a>`;
+                postsList.appendChild(postElement);
+            });
+        });
+    </script>
+
+    <footer>
+        <p>© 2024 blackmail.dev. All rights reserved.</p>
+    </footer>
+</body>
+</html>
