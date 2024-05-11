@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blogmail</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark-dimmed.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/go.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/makefile.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            console.log("calling highlightAll");
+            hljs.highlightAll();
+
+        });
+    </script>
+</head>
+<body>
+<h1>blogmail</h1>
+<p>Date: May 11, 2024</p>
+<p>How this blog is created</p>
+<p><a href="https://github.com/4thel00z/blogmail">blogmail</a> is my own little blog engine.</p>
+<p>To <span style="text-decoration: line-through">steal</span> eh.. reuse my code for your own project (shh.. it's GPL-3
+    licensed :-P), do the following:</p>
+<pre><code class="language-bash">go install github.com/4thel00z/blogmail/...@latest
+git clone git@github.com:4thel00z/blackmail.dev.git
+sed -i 's/blackmail.dev/coolstuff.dev/g' blackmail.dev/index.html
+mv blackmail.dev coolstuff.dev
+rm -rf coolstuff.dev/posts/*
+echo "[]" > coolstuff.dev/posts.json
+cd coolstuff.dev
+blogmail create</code></pre>
+<p>Ok, you cool sock. Now go and enjoy your new blog :-)</p>
+<p>Don't forget to host it on <a href="https://docs.github.com/en/pages/">Github pages</a> for free !</p>
+</body>
+
+</html>
