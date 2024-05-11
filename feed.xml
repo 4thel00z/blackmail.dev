@@ -3,11 +3,11 @@
     <title>Blackmail.dev Blog</title>
     <link>https://blackmail.dev</link>
     <description>Technical insights and software development stories.</description>
-    <lastBuildDate>Sat, 11 May 2024 03:10:33 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 11 May 2024 03:24:55 +0200</lastBuildDate>
     <item>
       <title>blogmail</title>
       <link>https://blackmail.dev/posts/20240511_blogmail</link>
-      <description>How this blog is created</description>
+      <description>A blog engine in 1h and less than 400 lines of code.</description>
       <guid>https://blackmail.dev/posts/20240511_blogmail</guid>
       <pubDate>Sat, 11 May 2024 00:00:00 +0000</pubDate>
     </item>
