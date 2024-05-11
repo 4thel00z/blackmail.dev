@@ -1,0 +1,15 @@
+<rss version="2.0">
+  <channel>
+    <title>Blackmail.dev Blog</title>
+    <link>https://blackmail.dev</link>
+    <description>Technical insights and software development stories.</description>
+    <lastBuildDate>Sat, 11 May 2024 03:10:33 +0200</lastBuildDate>
+    <item>
+      <title>blogmail</title>
+      <link>https://blackmail.dev/posts/20240511_blogmail</link>
+      <description>How this blog is created</description>
+      <guid>https://blackmail.dev/posts/20240511_blogmail</guid>
+      <pubDate>Sat, 11 May 2024 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
