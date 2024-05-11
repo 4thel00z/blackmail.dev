@@ -7,13 +7,11 @@ body {
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 20px;
+    grid-template-columns: 1fr; /* Changed to single column for simplicity */
     background: #fff;
     transition: background-color 0.3s ease;
 }
 header, footer {
-    grid-column: 1 / -1;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -33,11 +31,9 @@ img {
     max-width: 100%;
     height: auto;
 }
-.content, .sidebar {
+.content {
     padding-left: 20px;
-}
-.sidebar {
-    border-left: 1px solid #ccc;
+    padding-right: 20px; /* Ensures padding on both sides */
 }
 .post {
     margin-bottom: 40px;
@@ -52,13 +48,13 @@ img {
     header, footer, h1, h2, h3, a {
         color: #fff;
     }
-    .sidebar {
-        border-left: 1px solid #444;
-    }
 }
-pre code {
+pre, code {
+    border: 1px solid #ddd; /* Adds a border around the code */
+    padding: 1em; /* More padding for visual separation */
+    width: 100%; /* Ensures code blocks are full width */
+    overflow-x: auto; /* Ensures horizontal scrolling if code is too wide */
+    box-sizing: border-box; /* Includes padding in width calculation */
     display: block;
-    padding: 0.5em;
-    overflow-x: auto;
+    margin: 20px 0; /* Adds vertical space around the code block */
 }
-
