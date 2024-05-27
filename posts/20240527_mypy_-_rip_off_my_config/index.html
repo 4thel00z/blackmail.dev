@@ -6,7 +6,8 @@
     <title>mypy - rip off my config</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark-dimmed.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark-dimmed.min.css">
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
     <!-- and it's easy to individually load additional languages -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/go.min.js"></script>
@@ -43,11 +44,11 @@
     </script>
 </head>
 <body>
-    <h1>mypy - rip off my config</h1>
-    <p>Date: May 27, 2024</p>
-    <p>Thinking about tooling like mypy is annoying and just adds cognitive load. Here is a config you can rip off.</p>
+<h1>mypy - rip off my config</h1>
+<p>Date: May 27, 2024</p>
+<p>Thinking about tooling like mypy is annoying and just adds cognitive load. Here is a config you can rip off.</p>
 
-    <pre><code class="language-ini">[tool.mypy]
+<pre><code class="language-ini">[tool.mypy]
 python_version = "3.12.3"  # Adjust to your project's Python version
 ignore_missing_imports = true  # Ignore missing imports to avoid external library issues
 strict = true  # Enable strict mode for comprehensive type checking
@@ -60,5 +61,7 @@ warn_redundant_casts = true  # Warn about unnecessary casts
 warn_return_any = true  # Warn if returning Any type
 warn_unused_configs = true  # Warn about unused configuration options
 no_implicit_optional = true  # Disable treating Optional as a default for missing types</code></pre>
+<p>This configuration strikes a balance between enforcing strict type checking and maintaining flexibility for
+    real-world codebases. Adjust the settings based on your project's specific needs and complexity.</p>
 </body>
 </html>

@@ -15,22 +15,86 @@
         <!-- Posts will be loaded here -->
     </div>
 
-    <script>
-        fetch('posts.json')
-        .then(response => response.json())
-        .then(posts => {
-            const postsList = document.getElementById('postsList');
-            posts.forEach(post => {
-                const postElement = document.createElement('div');
-                postElement.innerHTML = `<a href="${post.path}/index.html"><h2>${post.date} - ${post.title}</h2></a><p>${post.summary}</p>`;
-                postsList.appendChild(postElement);
-            });
-        });
-    </script>
+    <div class="pagination">
+        <button id="prevPage" class="pagination-button">← Previous</button>
+        <div id="pageNumbers" class="page-numbers">
+            <!-- Page numbers will be generated here -->
+        </div>
+        <button id="nextPage" class="pagination-button">Next →</button>
+    </div>
 
     <footer>
         <p>© 2024 blackmail.dev. All rights reserved.</p>
         <p><a href="./feed.xml">RSS feed</a> | <a href="./blog.opml">OPML feed</a></p>
     </footer>
+
+    <script>
+        const pageSize = 5; // Configurable page size
+        let currentPage = 0;
+        let posts = [];
+
+        document.getElementById('prevPage').addEventListener('click', () => {
+            if (currentPage > 0) {
+                currentPage--;
+                displayPosts();
+            }
+        });
+
+        document.getElementById('nextPage').addEventListener('click', () => {
+            if ((currentPage + 1) * pageSize < posts.length) {
+                currentPage++;
+                displayPosts();
+            }
+        });
+
+        fetch('posts.json')
+        .then(response => response.json())
+        .then(data => {
+            posts = data;
+            displayPosts();
+        });
+
+        function displayPosts() {
+            const postsList = document.getElementById('postsList');
+            postsList.innerHTML = '';
+            const start = currentPage * pageSize;
+            const end = start + pageSize;
+            const paginatedPosts = posts.slice(start, end);
+
+            paginatedPosts.forEach(post => {
+                const postElement = document.createElement('div');
+                postElement.classList.add('post');
+                postElement.innerHTML = `<a href="${post.path}/index.html"><h2>${post.date} - ${post.title}</h2></a><p>${post.summary}</p>`;
+                postsList.appendChild(postElement);
+            });
+
+            // Enable or disable pagination buttons
+            document.getElementById('prevPage').disabled = currentPage === 0;
+            document.getElementById('nextPage').disabled = (currentPage + 1) * pageSize >= posts.length;
+
+            // Update pagination numbers
+            updatePaginationNumbers();
+        }
+
+        function updatePaginationNumbers() {
+            const pageNumbers = document.getElementById('pageNumbers');
+            pageNumbers.innerHTML = '';
+            const totalPages = Math.ceil(posts.length / pageSize);
+
+            for (let i = 0; i < totalPages; i++) {
+                const pageNumber = document.createElement('button');
+                pageNumber.classList.add('pagination-button');
+                pageNumber.textContent = i + 1;
+                if (i === currentPage) {
+                    pageNumber.classList.add('active');
+                }
+                pageNumber.addEventListener('click', () => {
+                    currentPage = i;
+                    displayPosts();
+                });
+                pageNumbers.appendChild(pageNumber);
+            }
+        }
+    </script>
 </body>
 </html>

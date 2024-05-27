@@ -1,0 +1,41 @@
+/* Light Theme Colors */
+:root {
+    --background-color: #fff;
+    --text-color: #333;
+    --link-color: #000;
+    --link-hover-color: #000;
+    --header-footer-color: #000;
+    --border-color: #ccc;
+    --button-bg-color: #fff;
+    --button-text-color: #333;
+    --button-hover-bg-color: #f0f0f0;
+    --button-hover-text-color: #000;
+    --button-disabled-bg-color: #e0e0e0;
+    --button-disabled-text-color: #999;
+    --button-active-bg-color: #333;
+    --button-active-text-color: #fff;
+    --code-border-color: #ddd;
+    --code-bg-color: #fff;
+}
+
+/* Dark Theme Colors */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #ccc;
+        --link-color: #fff;
+        --link-hover-color: #fff;
+        --header-footer-color: #fff;
+        --border-color: #555;
+        --button-bg-color: #333;
+        --button-text-color: #ccc;
+        --button-hover-bg-color: #444;
+        --button-hover-text-color: #fff;
+        --button-disabled-bg-color: #555;
+        --button-disabled-text-color: #777;
+        --button-active-bg-color: #fff;
+        --button-active-text-color: #000;
+        --code-border-color: #555;
+        --code-bg-color: #333;
+    }
+}

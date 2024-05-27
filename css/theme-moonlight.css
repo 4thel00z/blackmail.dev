@@ -1,0 +1,19 @@
+/* Moonlight Theme Colors */
+:root {
+    --background-color: #191f28;
+    --text-color: #c0cedd;
+    --link-color: #c69f68;
+    --link-hover-color: #93764d;
+    --header-footer-color: #c0cedd;
+    --border-color: #1f2730;
+    --button-bg-color: #1f2730;
+    --button-text-color: #c0cedd;
+    --button-hover-bg-color: #374656;
+    --button-hover-text-color: #fff;
+    --button-disabled-bg-color: #555;
+    --button-disabled-text-color: #777;
+    --button-active-bg-color: #c69f68;
+    --button-active-text-color: #1f2730;
+    --code-border-color: #1f2730;
+    --code-bg-color: #1f2730;
+}

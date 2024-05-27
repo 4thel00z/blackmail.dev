@@ -1,0 +1,41 @@
+/* Light Theme (Day) */
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --link-color: #007acc;
+    --link-hover-color: #005f99;
+    --header-footer-color: #333;
+    --border-color: #ccc;
+    --button-bg-color: #e0e0e0;
+    --button-text-color: #333;
+    --button-hover-bg-color: #ccc;
+    --button-hover-text-color: #000;
+    --button-disabled-bg-color: #f0f0f0;
+    --button-disabled-text-color: #999;
+    --button-active-bg-color: #007acc;
+    --button-active-text-color: #fff;
+    --code-border-color: #ddd;
+    --code-bg-color: #f0f0f0;
+}
+
+/* Dark Theme (Night) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #1a1b26;
+        --text-color: #c0caf5;
+        --link-color: #7aa2f7;
+        --link-hover-color: #3d59a1;
+        --header-footer-color: #c0caf5;
+        --border-color: #3b4261;
+        --button-bg-color: #414868;
+        --button-text-color: #c0caf5;
+        --button-hover-bg-color: #565f89;
+        --button-hover-text-color: #fff;
+        --button-disabled-bg-color: #737aa2;
+        --button-disabled-text-color: #999;
+        --button-active-bg-color: #7aa2f7;
+        --button-active-text-color: #1a1b26;
+        --code-border-color: #3b4261;
+        --code-bg-color: #414868;
+    }
+}
