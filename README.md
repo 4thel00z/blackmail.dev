@@ -13,6 +13,7 @@ You can easily switch between different themes for your blog by using the `@impo
 - `theme-default.css`: The default dark theme, a bit dull.
 - `theme-moonlight.css`: A theme inspired by [Moonlight GitHub](https://github.com/Moonlight-theme/Github).
 - `theme-tokynoight.css`: A theme inspired by [Tokyonight Vim theme](https://vimcolorschemes.com/folke/tokyonight.nvim).
+- `theme-eva.css`: A theme inspired by [Eva Vim theme](https://vimcolorschemes.com/hachy/eva01.vim).
 
 To apply a theme, simply add the `@import` statement at the top of your `style.css` file. For example, to use the default theme:
 
