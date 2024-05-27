@@ -1,9 +1,10 @@
 <opml version="2.0">
   <head>
     <title>Blackmail.dev OPML Feed</title>
-    <dateCreated>2024-05-11T03:24:57+02:00</dateCreated>
+    <dateCreated>2024-05-27T18:31:15+02:00</dateCreated>
   </head>
   <body>
     <outline text="blogmail" type="rss" xmlUrl="https://blackmail.dev/posts/20240511_blogmail" htmlUrl="https://blackmail.dev/posts/20240511_blogmail"></outline>
+    <outline text="mypy - rip off my config" type="rss" xmlUrl="https://blackmail.dev/posts/20240527_mypy_-_rip_off_my_config" htmlUrl="https://blackmail.dev/posts/20240527_mypy_-_rip_off_my_config"></outline>
   </body>
 </opml>

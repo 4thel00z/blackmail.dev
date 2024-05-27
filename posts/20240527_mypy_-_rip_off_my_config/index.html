@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mypy - rip off my config</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark-dimmed.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/go.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/makefile.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/ini.min.js"></script>
+    <script src="https://unpkg.com/highlightjs-badge@0.1.9/highlightjs-badge.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            console.log("calling highlightAll");
+            hljs.highlightAll();
+            var options = {
+                contentSelector: ".container",
+                // Delay in ms used for 'setTimeout' before badging is applied
+                // Use if you need to time highlighting and badge application
+                // since the badges need to be applied afterwards.
+                // 0 - direct execution (ie. you handle timing
+                loadDelay: 0,
+
+                // CSS class(es) used to render the copy icon.
+                copyIconClass: "fa fa-copy",
+                // CSS class(es) used to render the done icon.
+                checkIconClass: "fa fa-check text-success",
+
+                // hook to allow modifying the text before it's pasted
+                onBeforeTextCopied: function (text, codeElement) {
+                    return text;   //  you can fix up the text here
+                }
+            };
+            window.highlightJsBadge(options);
+        });
+    </script>
+</head>
+<body>
+    <h1>mypy - rip off my config</h1>
+    <p>Date: May 27, 2024</p>
+    <p>Thinking about tooling like mypy is annoying and just adds cognitive load. Here is a config you can rip off.</p>
+
+    <pre><code class="language-ini">[tool.mypy]
+python_version = "3.12.3"  # Adjust to your project's Python version
+ignore_missing_imports = true  # Ignore missing imports to avoid external library issues
+strict = true  # Enable strict mode for comprehensive type checking
+check_untyped_defs = true  # Check functions without type annotations
+disallow_untyped_calls = true  # Disallow calls to functions without type annotations
+disallow_untyped_defs = true  # Disallow defining functions without type annotations
+disallow_incomplete_defs = true  # Disallow incomplete function definitions without full type annotations
+warn_unused_ignores = true  # Warn about unused # type: ignore comments
+warn_redundant_casts = true  # Warn about unnecessary casts
+warn_return_any = true  # Warn if returning Any type
+warn_unused_configs = true  # Warn about unused configuration options
+no_implicit_optional = true  # Disable treating Optional as a default for missing types</code></pre>
+</body>
+</html>

@@ -3,13 +3,20 @@
     <title>Blackmail.dev Blog</title>
     <link>https://blackmail.dev</link>
     <description>Technical insights and software development stories.</description>
-    <lastBuildDate>Sat, 11 May 2024 03:24:55 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 27 May 2024 18:31:07 +0200</lastBuildDate>
     <item>
       <title>blogmail</title>
       <link>https://blackmail.dev/posts/20240511_blogmail</link>
       <description>A blog engine in 1h and less than 400 lines of code.</description>
       <guid>https://blackmail.dev/posts/20240511_blogmail</guid>
       <pubDate>Sat, 11 May 2024 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>mypy - rip off my config</title>
+      <link>https://blackmail.dev/posts/20240527_mypy_-_rip_off_my_config</link>
+      <description>Thinking about tooling like mypy is annoying and just adds cognitive load. Here is a config you can rip off.</description>
+      <guid>https://blackmail.dev/posts/20240527_mypy_-_rip_off_my_config</guid>
+      <pubDate>Mon, 27 May 2024 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
