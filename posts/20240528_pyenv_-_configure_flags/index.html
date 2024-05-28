@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyenv - configure flags</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark-dimmed.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/go.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/languages/makefile.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            hljs.highlightAll();
+        });
+    </script>
+</head>
+<body>
+<button class="back-button" onclick="window.history.back();"><i class="fa fa-arrow-left"></i> Back</button>
+<h1>pyenv - configure flags</h1>
+<p>Date: May 28, 2024</p>
+<p>pyenv can be configured to build python with custom configure flags.</p>
+<h2>Motivation</h2>
+<p>I had this problem... I wanted to load the <a href="https://github.com/nalgeon/sqlean">sqlean</a> extension.</p>
+<p>But strangely the sqlite3.Connection instance does not have the load_extension method and throws AttributeErrors in
+    your face.</p>
+<p>The <a href="https://docs.python.org/3/library/sqlite3.html" >docs state</a> that Python needs to be compiled with the
+    --enable-loadable-sqlite-extensions
+    configure option:</p>
+<blockquote>
+Note
+
+The sqlite3 module is not built with loadable extension support by default,
+because some platforms (notably macOS) have SQLite libraries which are compiled without this feature.
+To get loadable extension support,
+you must pass the --enable-loadable-sqlite-extensions option to configure.
+</blockquote>
+
+<p>This is how you compile python versions with pyenv using certain python configure flags:</p>
+<pre><code class="language-bash">
+PYTHON_CONFIGURE_OPTS=" --enable-loadable-sqlite-extensions=true" pyenv install 3.12.3
+pyenv global 3.12.3
+# Test if sqlite3.Connection has the load_extension method
+python3 -c "import sqlite3;sqlite3.connect(':memory:').enable_load_extension(True)"
+</code></pre>
+
+</body>
+</html>
